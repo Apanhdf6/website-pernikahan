@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const backgroundMusic = "https://pub-b8ba40ca55ce4fe4ae9b4b78276a35cc.r2.dev/audio/Backstreet%20Boys%20-%20Shape%20Of%20My%20Heart%20(192).ogg";
-
+const backgroundMusic = 'https://eedybzczj6qzwhpy.public.blob.vercel-storage.com/audio/Backstreet%20Boys%20-%20Shape%20Of%20My%20Heart.mp3';
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -30,7 +28,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ isPlaying, setIsPlaying }) =>
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
@@ -39,7 +37,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ isPlaying, setIsPlaying }) =>
       {/* Equalizer animation when playing */}
       <AnimatePresence>
         {isPlaying && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
@@ -63,7 +61,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ isPlaying, setIsPlaying }) =>
         aria-label={isPlaying ? "Mute music" : "Play music"}
       >
         <span className={`absolute inset-0 bg-rose-gold-50/50 rounded-full transition-transform duration-1000 ${isPlaying ? 'animate-spin-slow' : ''} border-2 border-dashed border-rose-gold-200`}></span>
-        
+
         {isPlaying ? (
           // Music Note / Pause Icon
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="2 2 20 20" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 relative z-10">

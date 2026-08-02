@@ -8,11 +8,11 @@ interface AcaraProps {
 
 const Acara: React.FC<AcaraProps> = ({ data }) => {
   // Generate Google Calendar Link
-  // Target: 12 October 2026. Akad: 08:00 WIB (01:00 UTC), Resepsi ends around 15:00 WIB (08:00 UTC)
-  const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+${encodeURIComponent(data.groom.nickname)}+%26+${encodeURIComponent(data.bride.nickname)}&dates=20261012T010000Z/20261012T080000Z&details=Menghadiri+undangan+pernikahan+${encodeURIComponent(data.groom.fullName)}+dan+${encodeURIComponent(data.bride.fullName)}&location=${encodeURIComponent(data.location)}`;
+  // Target: 06 September 2026. Akad: 08:00 WIB (01:00 UTC), Resepsi ends around 15:00 WIB (08:00 UTC)
+  const calendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+${encodeURIComponent(data.groom.nickname)}+%26+${encodeURIComponent(data.bride.nickname)}&dates=20260906T010000Z/20260906T080000Z&details=Menghadiri+undangan+pernikahan+${encodeURIComponent(data.groom.fullName)}+dan+${encodeURIComponent(data.bride.fullName)}&location=${encodeURIComponent(data.location)}`;
 
-  // Google Maps link
-  const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.location + " Gedung Pernikahan Utama")}`;
+  // Google Maps link - using exact coordinates from ABOUT.md
+  const mapsLink = `https://www.google.com/maps/search/?api=1&query=-7.312101819537807,108.39564734292398`;
 
   return (
     <section id="acara" className="relative bg-[#FDFBF7] px-6 py-16 text-center border-b border-rose-gold-100 overflow-hidden">
@@ -62,7 +62,7 @@ const Acara: React.FC<AcaraProps> = ({ data }) => {
           {/* Time & Place */}
           <div className="text-stone-600 text-sm font-serif space-y-2">
             <p className="font-bold text-stone-700 font-sans">
-              Minggu, 12 Oktober 2026
+              Jum'at, 06 September 2026
             </p>
             <p>Pukul 08.00 - 10.00 WIB</p>
             <p className="font-bold text-sage-700 font-sans pt-2">
@@ -100,14 +100,14 @@ const Acara: React.FC<AcaraProps> = ({ data }) => {
           {/* Time & Place */}
           <div className="text-stone-600 text-sm font-serif space-y-2">
             <p className="font-bold text-stone-700 font-sans">
-              Minggu, 12 Oktober 2026
+              Jum'at, 06 September 2026
             </p>
-            <p>Pukul 11.00 WIB - Selesai</p>
+            <p>Setelah Akad Nikah - Selesai</p>
             <p className="font-bold text-sage-700 font-sans pt-2">
-              Gedung Bagas Raya Ciamis
+              Kediaman Mempelai Wanita
             </p>
-            <p className="text-xs text-stone-500 italic font-sans">
-              Jl. Jend. Sudirman No. 123, Ciamis, Jawa Barat
+            <p className="text-xs text-stone-500 italic">
+              {data.location}
             </p>
           </div>
         </motion.div>

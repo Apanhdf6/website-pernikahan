@@ -5,14 +5,16 @@ const Gift: React.FC = () => {
 
   const bankAccounts = [
     {
-      bank: "BCA",
-      number: "1234567890",
-      owner: "Apan Fadilah"
+      bank: "Bank Jago",
+      number: "105372029877",
+      owner: "Apan Fadilah",
+      isWallet: false
     },
     {
-      bank: "Mandiri",
-      number: "9876543210",
-      owner: "Azzahra Sabila"
+      bank: "Dana",
+      number: "085759439637",
+      owner: "Azzahra Sabila Ababil",
+      isWallet: true
     }
   ];
 
@@ -56,7 +58,9 @@ const Gift: React.FC = () => {
             <span className="font-sans font-black text-2xl text-sage-700 tracking-wider mb-2">
               {acc.bank}
             </span>
-            <p className="text-stone-500 font-serif text-xs mb-1">Nomor Rekening:</p>
+            <p className="text-stone-500 font-serif text-xs mb-1">
+              {acc.isWallet ? "Nomor E-Wallet:" : "Nomor Rekening:"}
+            </p>
             <p className="text-xl font-bold font-sans text-rose-gold-900 tracking-widest mb-1">
               {acc.number}
             </p>
@@ -80,7 +84,7 @@ const Gift: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0A2.247 2.247 0 0 1 13.5 4.75h-3c-.226 0-.443-.057-.632-.158m7.332 0c.259.027.518.068.774.123M7.67 3.888a2.25 2.25 0 0 0-1.012 1.014M5.934 5.304C5.7 5.72 5.578 6.19 5.578 6.682v10.58c0 .29.091.564.246.79M5.934 5.304a2.985 2.985 0 0 1 1.226-1.127M18.066 5.304c.23.416.352.886.352 1.378v10.58c0 .29-.091.564-.246.79M18.066 5.304a2.985 2.985 0 0 0-1.226-1.127m0 0A2.978 2.978 0 0 0 15 3.75h-3m-3.012 0A2.978 2.978 0 0 0 9 3.75M9 15h6m-6 3h6m-9-3h.008v.008H6V15Zm0 3h.008v.008H6V18Z" />
                   </svg>
-                  Salin Rekening
+                  {acc.isWallet ? "Salin Nomor" : "Salin Rekening"}
                 </>
               )}
             </button>
@@ -97,13 +101,12 @@ const Gift: React.FC = () => {
           <span className="font-serif font-bold text-base text-rose-gold-900 uppercase tracking-wide mb-1">
             Kirim Kado Fisik
           </span>
-          <p className="text-stone-500 font-serif text-xs mb-3">Kirim ke Alamat Penerima:</p>
           <div className="bg-[#FCFAF6] border border-rose-gold-100 rounded-2xl p-4 text-xs text-stone-600 font-serif leading-relaxed text-center max-w-xs mb-4">
-            <p className="font-bold text-stone-700 font-sans mb-1">Rumah Azzahra Sabila</p>
-            <p>Jl. Jend. Sudirman No. 123, Kelurahan Sindangrasa, Kecamatan Ciamis, Kabupaten Ciamis, Jawa Barat, 46215</p>
+            <p className="font-bold text-stone-700 font-sans mb-1">Rumah Mempelai Wanita</p>
+            <p>Dusun Desa Rt 04 Rw 01 Desa Kertaharja Kec Cijeungjing Kab Ciamis Jawa Barat</p>
           </div>
           <button
-            onClick={() => handleCopy("Jl. Jend. Sudirman No. 123, Ciamis, Jawa Barat, 46215", "Alamat")}
+            onClick={() => handleCopy("Dusun Desa Rt 04 Rw 01 Desa Kertaharja Kec Cijeungjing Kab Ciamis Jawa Barat", "Alamat")}
             className="px-5 py-2 bg-sage-600 hover:bg-sage-700 text-white rounded-full font-medium text-xs shadow-sm shadow-sage-600/10 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-1.5 cursor-pointer focus:outline-none"
           >
             {copiedAccount === "Alamat" ? (

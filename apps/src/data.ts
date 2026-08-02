@@ -3,11 +3,13 @@ export interface WeddingData {
         nickname: string;
         fullName: string;
         parents: string;
+        instagram: string;
     };
     bride: {
         nickname: string;
         fullName: string;
         parents: string;
+        instagram: string;
     };
     date: string;
     location: string;
@@ -16,16 +18,18 @@ export interface WeddingData {
 
 export const weddingInfo: WeddingData = {
     groom: {
-        nickname: "Apan Fadilah",
+        nickname: "Apan",
         fullName: "Apan Fadilah",
-        parents: "Putra dari Bapak Zakaria Ansor & Ibu Rai Maskanah",
+        parents: "Putra ke-2 dari Bapak Zakaria Ansor (alm)",
+        instagram: "apanhdf",
     },
     bride: {
-        nickname: "Azzahra Sabila Ababil",
+        nickname: "Azzahra",
         fullName: "Azzahra Sabila Ababil",
-        parents: "Putri dari Bapak Nana Rohana & Ibu Neni Heryani",
+        parents: "Putri ke-3 dari Bapak Nana Rohana",
+        instagram: "azhrasbl_04",
     },
-    date: "Minggu, 12 Oktober 2026", // Bisa disesuaikan nanti
-    location: "Ciamis, Jawa Barat",
+    date: "Jum'at, 06 September 2026",
+    location: "Dusun Desa Rt 04 Rw 01 Desa Kertaharja Kec Cijeungjing Kab Ciamis Jawa Barat",
     theme: "Soft Pastel Botanical",
 };

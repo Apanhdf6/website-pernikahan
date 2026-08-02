@@ -31,9 +31,3 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-# Media / Audio files
-*.ogg
-*.mp3
-*.wav
-apps/src/assets/audio/

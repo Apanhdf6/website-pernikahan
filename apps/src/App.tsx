@@ -123,7 +123,7 @@ const App: React.FC = () => {
 
 // Mini Countdown helper for the desktop left fixed sidebar
 const DesktopCountdown: React.FC = () => {
-  const targetDate = new Date('2026-10-12T09:00:00').getTime();
+  const targetDate = new Date('2026-09-06T08:00:00').getTime();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   React.useEffect(() => {
