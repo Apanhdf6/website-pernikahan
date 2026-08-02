@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Custom Theme Palette: Pastel Botanical */
+  --color-sage-50: #f4f6f3;
+  --color-sage-100: #e2ebd5;
+  --color-sage-200: #c9dcb2;
+  --color-sage-600: #5c7250;
+  --color-sage-700: #46573c;
+  --color-sage-800: #33402c;
+
+  --color-rose-gold-50: #fffbfb;
+  --color-rose-gold-100: #f9edea;
+  --color-rose-gold-200: #f3dad4;
+  --color-rose-gold-300: #e2b3a8;
+  --color-rose-gold-600: #b57a6e;
+  --color-rose-gold-700: #9c5f53;
+  --color-rose-gold-900: #62342c;
+
+  /* Custom Animations */
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-float-medium: float-med 6s ease-in-out infinite;
+  --animate-fade-in-up: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fadeIn 1.2s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+  @keyframes float-med {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-4deg); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #faf9f6;
+  color: #4b4845;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities & Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-rose-gold-200);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rose-gold-300);
+}
+
+/* Audio visualizer bar animations */
+.bar {
+  animation: equalize 1s ease-in-out infinite alternate;
+}
+.bar:nth-child(1) { animation-delay: 0.1s; }
+.bar:nth-child(2) { animation-delay: 0.3s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes equalize {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+/* Leaf particle effect styles */
+.leaf-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}

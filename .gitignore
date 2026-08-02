@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+apps/node_modules/
+
+# Production / Build output
+dist/
+apps/dist/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+apps/.env
+apps/.env.local
+apps/.env.*.local
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Media / Audio files
+*.ogg
+*.mp3
+*.wav
+apps/src/assets/audio/
