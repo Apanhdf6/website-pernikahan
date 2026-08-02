@@ -62,7 +62,7 @@ const Acara: React.FC<AcaraProps> = ({ data }) => {
           {/* Time & Place */}
           <div className="text-stone-600 text-sm font-serif space-y-2">
             <p className="font-bold text-stone-700 font-sans">
-              Jum'at, 06 September 2026
+              Minggu, 06 September 2026
             </p>
             <p>Pukul 08.00 - 10.00 WIB</p>
             <p className="font-bold text-sage-700 font-sans pt-2">
@@ -100,7 +100,7 @@ const Acara: React.FC<AcaraProps> = ({ data }) => {
           {/* Time & Place */}
           <div className="text-stone-600 text-sm font-serif space-y-2">
             <p className="font-bold text-stone-700 font-sans">
-              Jum'at, 06 September 2026
+              Minggu, 06 September 2026
             </p>
             <p>Setelah Akad Nikah - Selesai</p>
             <p className="font-bold text-sage-700 font-sans pt-2">

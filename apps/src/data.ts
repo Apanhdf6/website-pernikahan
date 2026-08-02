@@ -29,7 +29,7 @@ export const weddingInfo: WeddingData = {
         parents: "Putri ke-3 dari Bapak Nana Rohana",
         instagram: "azhrasbl_04",
     },
-    date: "Jum'at, 06 September 2026",
+    date: "Minggu, 06 September 2026",
     location: "Dusun Desa Rt 04 Rw 01 Desa Kertaharja Kec Cijeungjing Kab Ciamis Jawa Barat",
     theme: "Soft Pastel Botanical",
 };
