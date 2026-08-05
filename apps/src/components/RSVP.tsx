@@ -18,6 +18,7 @@ const RSVP: React.FC = () => {
   const [guestsCount, setGuestsCount] = useState(1);
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isFirebaseConfigured && db) {
@@ -37,6 +38,7 @@ const RSVP: React.FC = () => {
         });
         
         setWishes(wishesData);
+        localStorage.setItem('wedding_wishes', JSON.stringify(wishesData));
       }, (error) => {
         console.error("Firestore subscription error, falling back to localStorage:", error);
         loadFromLocalStorage();
@@ -84,7 +86,9 @@ const RSVP: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !message.trim()) return;
+    if (!name.trim() || !message.trim() || isSubmitting) return;
+
+    setIsSubmitting(true);
 
     const options: Intl.DateTimeFormatOptions = {
       day: 'numeric',
@@ -119,9 +123,12 @@ const RSVP: React.FC = () => {
       } catch (error) {
         console.error("Error adding document to Firestore: ", error);
         saveToLocalStorage(dateStr);
+      } finally {
+        setIsSubmitting(false);
       }
     } else {
       saveToLocalStorage(dateStr);
+      setIsSubmitting(false);
     }
   };
 
@@ -234,9 +241,17 @@ const RSVP: React.FC = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3 bg-sage-600 hover:bg-sage-700 text-white rounded-full font-medium text-sm shadow-md shadow-sage-600/10 transition-all duration-300 hover:scale-[1.01] active:scale-95 cursor-pointer focus:outline-none"
+            disabled={isSubmitting}
+            className="w-full py-3 bg-sage-600 hover:bg-sage-700 disabled:bg-sage-400 text-white rounded-full font-medium text-sm shadow-md shadow-sage-600/10 transition-all duration-300 hover:scale-[1.01] active:scale-95 cursor-pointer disabled:cursor-not-allowed focus:outline-none flex items-center justify-center gap-2"
           >
-            Kirim RSVP & Ucapan
+            {isSubmitting ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Mengirim Ucapan...</span>
+              </>
+            ) : (
+              'Kirim RSVP & Ucapan'
+            )}
           </button>
         </form>
 
