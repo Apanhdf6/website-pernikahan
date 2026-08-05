@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-const backgroundMusic = 'https://eedybzczj6qzwhpy.public.blob.vercel-storage.com/audio/Backstreet%20Boys%20-%20Shape%20Of%20My%20Heart.mp3';
+const backgroundMusic = 'https://eedybzczj6qzwhpy.public.blob.vercel-storage.com/audio/Tiara%20Andini%2C%20Arsy%20Widianto%20-%20Lagu%20Pernikahan%20Kita.mp3';
 
 interface MusicPlayerProps {
   isPlaying: boolean;
