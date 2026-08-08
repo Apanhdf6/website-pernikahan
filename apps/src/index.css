@@ -53,11 +53,13 @@
   }
 }
 
-body {
+html, body, #root {
   font-family: var(--font-sans);
   background-color: #faf9f6;
   color: #4b4845;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 /* Custom Utilities & Styles */

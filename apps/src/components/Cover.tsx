@@ -35,11 +35,13 @@ const Cover: React.FC<CoverProps> = ({ data, onOpen }) => {
       initial={{ y: 0, opacity: 1 }}
       exit={{ y: '-100%', opacity: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-0 z-50 bg-[#FDFBF7] flex flex-col justify-between p-6 md:p-8 text-center overflow-y-auto"
+      className="fixed inset-0 z-50 bg-[#FDFBF7] flex flex-col justify-between p-4 sm:p-6 md:p-8 text-center overflow-y-auto overflow-x-hidden w-full max-w-full"
     >
       {/* Background Pastel Blur Decor */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-rose-gold-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-slow"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-sage-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-medium"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-rose-gold-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-slow"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-sage-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-medium"></div>
+      </div>
 
       {/* Top Header */}
       <motion.div
