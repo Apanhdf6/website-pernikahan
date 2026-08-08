@@ -64,7 +64,7 @@ const Acara: React.FC<AcaraProps> = ({ data }) => {
             <p className="font-bold text-stone-700 font-sans">
               Minggu, 06 September 2026
             </p>
-            <p>Pukul 08.00 - 10.00 WIB</p>
+            <p>Pukul 08:00 WIB</p>
             <p className="font-bold text-sage-700 font-sans pt-2">
               Kediaman Mempelai Wanita
             </p>
