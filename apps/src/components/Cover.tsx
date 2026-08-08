@@ -41,13 +41,6 @@ const Cover: React.FC<CoverProps> = ({ data, onOpen }) => {
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-rose-gold-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-slow"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-sage-100/70 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-medium"></div>
 
-      {/* Background Watermark Floral SVG */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] text-rose-gold-200/20 pointer-events-none select-none">
-        <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full animate-spin-slow">
-          <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18A2,2 0 0,1 10,16A2,2 0 0,1 12,14A2,2 0 0,1 14,16A2,2 0 0,1 12,18Z" />
-        </svg>
-      </div>
-
       {/* Top Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}

@@ -43,18 +43,26 @@ const Mempelai: React.FC<MempelaiProps> = ({ data }) => {
           className="flex flex-col items-center bg-white/60 backdrop-blur-[1px] border border-rose-gold-100/50 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow"
         >
           {/* Avatar frame */}
-          <div className="relative w-36 h-36 mb-6">
+          <div className="relative w-40 h-40 mb-6">
             {/* Double ring border */}
-            <div className="absolute inset-0 rounded-full border-2 border-rose-gold-200 animate-spin-slow"></div>
+            <div className="absolute inset-0 rounded-full border-2 border-rose-gold-200"></div>
             <div className="absolute inset-2 rounded-full border border-dashed border-sage-600/50"></div>
-            {/* Portrait placeholder with initial */}
-            <div className="absolute inset-3 rounded-full bg-sage-50 flex items-center justify-center text-sage-700 font-serif text-5xl font-bold border border-rose-gold-100 shadow-inner">
-              AF
+            {/* Portrait with image */}
+            <div className="absolute inset-3 rounded-full overflow-hidden bg-sage-50 border border-rose-gold-100 shadow-inner flex items-center justify-center">
+              {data.groom.image ? (
+                <img
+                  src={data.groom.image}
+                  alt={data.groom.fullName}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-sage-700 font-serif text-5xl font-bold">AF</span>
+              )}
             </div>
             {/* Small floral SVG badge */}
-            <div className="absolute -bottom-1 -right-1 bg-white p-1 rounded-full border border-rose-gold-200 shadow-sm text-sage-600">
+            <div className="absolute -bottom-1 -right-1 bg-white p-1.5 rounded-full border border-rose-gold-200 shadow-sm text-sage-600 z-10">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18A2,2 0 0,1 10,16A2,2 0 0,1 12,14A2,2 0 0,1 14,16A2,2 0 0,1 12,18Z" />
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18A2,2 0 0,1 10,16A2,2 0 0,1 12,14A2,2 0 0,1 14,16A2,2 0 0,1 12,18Z" />
               </svg>
             </div>
           </div>
@@ -106,16 +114,24 @@ const Mempelai: React.FC<MempelaiProps> = ({ data }) => {
           className="flex flex-col items-center bg-white/60 backdrop-blur-[1px] border border-rose-gold-100/50 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow"
         >
           {/* Avatar frame */}
-          <div className="relative w-36 h-36 mb-6">
+          <div className="relative w-40 h-40 mb-6">
             {/* Double ring border */}
-            <div className="absolute inset-0 rounded-full border-2 border-rose-gold-200 animate-spin-slow"></div>
+            <div className="absolute inset-0 rounded-full border-2 border-rose-gold-200"></div>
             <div className="absolute inset-2 rounded-full border border-dashed border-sage-600/50"></div>
-            {/* Portrait placeholder with initial */}
-            <div className="absolute inset-3 rounded-full bg-rose-gold-50 flex items-center justify-center text-rose-gold-700 font-serif text-5xl font-bold border border-rose-gold-100 shadow-inner">
-              AS
+            {/* Portrait with image */}
+            <div className="absolute inset-3 rounded-full overflow-hidden bg-rose-gold-50 border border-rose-gold-100 shadow-inner flex items-center justify-center">
+              {data.bride.image ? (
+                <img
+                  src={data.bride.image}
+                  alt={data.bride.fullName}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-rose-gold-700 font-serif text-5xl font-bold">AS</span>
+              )}
             </div>
             {/* Small floral SVG badge */}
-            <div className="absolute -bottom-1 -right-1 bg-white p-1 rounded-full border border-rose-gold-200 shadow-sm text-rose-gold-600">
+            <div className="absolute -bottom-1 -right-1 bg-white p-1.5 rounded-full border border-rose-gold-200 shadow-sm text-rose-gold-600 z-10">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18A2,2 0 0,1 10,16A2,2 0 0,1 12,14A2,2 0 0,1 14,16A2,2 0 0,1 12,18Z" />
               </svg>
